@@ -24,7 +24,7 @@ function exec(command) {
 }
 
 function clean(string) {
-  return string.trim().replace(/^"/, '').replace(/"$/, '').split('\\n').join('').split('\\r').join('')
+  return string.trim().replace(/^"/, '').replace(/",?$/, '').split('\\n').join('').split('\\r').join('').replace(/ /g, '')
 }
 
 function decode(encrypted) {
